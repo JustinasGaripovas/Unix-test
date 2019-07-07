@@ -1,0 +1,43 @@
+#! /bin/sh
+
+echo Pradzia
+echo Skaicius parametru $#
+echo Praitas returno numeris $?
+
+parameters=$#
+
+doProcess()
+{
+ echo Process start
+
+ list=( $(ls -al) )
+
+ echo $list
+
+ echo ___END____
+}
+
+
+if [ $parameters -eq 0 ]
+then
+	exit 257
+elif [ $parameters -eq 1 ]
+then
+
+command=$1;
+
+	#We doing a function
+
+doProcess $command
+
+
+
+elif [ $parameters -gt 1 ]
+then
+
+for v in $#
+do
+	echo x
+done
+
+fi

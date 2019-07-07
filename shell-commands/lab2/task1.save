@@ -1,0 +1,25 @@
+#! /bin/sh
+echo "|Pradzia|"
+
+file=$1
+
+echo Count of items $ #
+
+
+
+if [ -f $file ]
+then
+ echo file exists
+else
+ echo file doesnt exist
+ return 1
+fi
+
+echo "$file$"
+
+if [ `ls -l | grep "$file$" | awk '{print $3}'` = `who | awk '{print $1}'` ]
+then
+ echo You are the father
+else
+ echo Youre not the owner
+fi
